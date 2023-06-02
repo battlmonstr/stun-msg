@@ -33,7 +33,7 @@
 #define ARRAY_SIZE(x) (sizeof(x)/sizeof(x[0]))
 #define UNUSED(x) ((void)(x))
 
-#if !defined(__APPLE__)
+#if !defined(__APPLE__) && !defined(_WIN32)
 static uint64_t htonll(uint64_t value) {
   const int num = 42;
   if(*(char *)&num == 42) { /* test little endian */
